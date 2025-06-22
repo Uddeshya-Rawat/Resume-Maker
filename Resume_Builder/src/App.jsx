@@ -1,5 +1,6 @@
 
 import './App.css'
+
 import ResumeForm from './Components/ResumeForm'
 
 import Sidebar from './Components/sidebar'
@@ -11,10 +12,11 @@ function App() {
 
   return (
     <>
-     <div className='flex'>
+     <div className='flex h-full'>
       <Sidebar/>
       <ResumeForm/>
       <Template/>
+      
      
      </div>
         

@@ -1,6 +1,6 @@
 
 import { useDispatch, useSelector } from 'react-redux'
-import { changeEmail, changeFirstName, changeLastName, changeNumber } from '../Features/FormSlice/formSlice'
+import {  setFirstName,setLastName,setEmail,setNumber } from '../Features/FormSlice/formSlice'
 
 const PersonalDetails = () => {
 
@@ -27,7 +27,7 @@ const PersonalDetails = () => {
                             placeholder="First name"
                             className="border rounded-lg p-2 w-full bg-white"
                             value={firstName}
-                            onChange={(e)=>dispatch(changeFirstName(e.target.value))}
+                            onChange={(e)=>dispatch(setFirstName(e.target.value))}
                         />
                     </div>
 
@@ -44,31 +44,31 @@ const PersonalDetails = () => {
                             placeholder="Last name"
                             className="border rounded-lg p-2 w-full bg-white"
                             value={lastName}
-                            onChange={(e) =>dispatch(changeLastName(e.target.value)) }
+                            onChange={(e) =>dispatch(setLastName(e.target.value)) }
                         />
                     </div>
 
                     {/*Email */}
 
                     <div>
-                        <label htmlfor="email" className='block text-xl font-semibold'>Email:</label>
+                        <label htmlFor="email" className='block text-xl font-semibold'>Email:</label>
                         <input className='border rounded-lg p-2 w-full bg-white'
                          id="email"
                          type="email"
                          value={email}
-                         onChange={(e)=>dispatch(changeEmail(e.target.value))}
+                         onChange={(e)=>dispatch(setEmail(e.target.value))}
                          placeholder='Your email' ></input>
                     </div>
 
                     {/*Contact Number */}
                     <div>
-                        <label htmlfor="Contact Number" className='block text-xl font-semibold'>Contact Number:</label>
+                        <label htmlFor="Contact Number" className='block text-xl font-semibold'>Contact Number:</label>
                         <input className='border rounded-lg p-2 w-full bg-white no-spinner'
                          id="Contact Number"
                          type="number"
                          min={1}
                          value={contactNumber}
-                         onChange={(e)=>dispatch(changeNumber(e.target.value))}
+                         onChange={(e)=>dispatch(setNumber(e.target.value))}
                          placeholder='Your Number' ></input>
                     </div>
                     

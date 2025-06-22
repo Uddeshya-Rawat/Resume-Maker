@@ -41,7 +41,7 @@ const Sidebar = () => {
     ]
     return (
         <>
-            <div className='h-screen w-[12%] p-2 bg-blue-900 flex flex-col gap-4 '>
+            <div className='h-screen  w-50 p-2 bg-blue-900 flex flex-col gap-4 fixed top-0 left-0'>
                 {details.map((detail, index) => {
                     return (
                         <div className='flex mt-4 '  key={index} >
