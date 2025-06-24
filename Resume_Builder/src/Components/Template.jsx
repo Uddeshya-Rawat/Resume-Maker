@@ -4,11 +4,13 @@ import React, { useRef } from "react";
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import Temp1 from "./Templates/Temp1";
+import Temp2 from "./Templates/Temp2";
+import Temp3 from "./Templates/Temp3";
 
 const ResumeTemplate = () => {
   const resumeRef = useRef();
 
-  const templateArray = [<Temp1 />]
+  const templateArray = [<Temp1 />,<Temp2/>,<Temp3/>]
 
 
   const handlePrint = async () => {
@@ -45,7 +47,7 @@ const ResumeTemplate = () => {
   };
 
   return (
-    <div className="bg-gray-300 p-6 flex flex-col items-center gap-6 w-full">
+    <div className="bg-gray-300 p-6 flex flex-col items-center gap-6 w-full contain-content">
       <button
         onClick={handlePrint}
         className="bg-blue-600 p-2 rounded-2xl text-white w-1/3"

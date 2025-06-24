@@ -12,20 +12,20 @@ const PersonalDetails = () => {
     
     
   return (
-   <form className="w-full">
-  <h1 className="mb-2 text-xl font-semibold">Personal Details</h1>
+   <form className="w-full px-6 mt-10 ml-50 ">
+  <h1 className="mb-6 text-3xl font-bold">Personal Details</h1>
 
-  <div className="grid grid-cols-2 gap-2">
+  <div className="grid grid-cols-2 gap-6">
     {/* First Name */}
     <div>
-      <label htmlFor="firstName" className="block text-sm font-medium">
+      <label htmlFor="firstName" className="block text-lg font-semibold mb-1">
         First Name:
       </label>
       <input
         id="firstName"
         type="text"
         placeholder="First name"
-        className="border rounded p-1 w-full bg-white text-sm"
+        className="w-full p-2 border rounded bg-white text-sm"
         value={firstName}
         onChange={(e) => dispatch(setFirstName(e.target.value))}
       />
@@ -33,14 +33,14 @@ const PersonalDetails = () => {
 
     {/* Last Name */}
     <div>
-      <label htmlFor="lastName" className="block text-sm font-medium">
+      <label htmlFor="lastName" className="block text-lg font-semibold mb-1">
         Last Name:
       </label>
       <input
         id="lastName"
         type="text"
         placeholder="Last name"
-        className="border rounded p-1 w-full bg-white text-sm"
+        className="w-full p-2 border rounded bg-white text-sm"
         value={lastName}
         onChange={(e) => dispatch(setLastName(e.target.value))}
       />
@@ -48,14 +48,14 @@ const PersonalDetails = () => {
 
     {/* Email */}
     <div>
-      <label htmlFor="email" className="block text-sm font-medium">
+      <label htmlFor="email" className="block text-lg font-semibold mb-1">
         Email:
       </label>
       <input
         id="email"
         type="email"
         placeholder="Your email"
-        className="border rounded p-1 w-full bg-white text-sm"
+        className="w-full p-2 border rounded bg-white text-sm"
         value={email}
         onChange={(e) => dispatch(setEmail(e.target.value))}
       />
@@ -63,7 +63,7 @@ const PersonalDetails = () => {
 
     {/* Contact Number */}
     <div>
-      <label htmlFor="contactNumber" className="block text-sm font-medium">
+      <label htmlFor="contactNumber" className="block text-lg font-semibold mb-1">
         Contact Number:
       </label>
       <input
@@ -71,13 +71,14 @@ const PersonalDetails = () => {
         type="number"
         min={1}
         placeholder="Your number"
-        className="border rounded p-1 w-full bg-white text-sm no-spinner"
+        className="w-full p-2 border rounded bg-white text-sm no-spinner"
         value={contactNumber}
         onChange={(e) => dispatch(setNumber(e.target.value))}
       />
     </div>
   </div>
 </form>
+
 
   )
 }

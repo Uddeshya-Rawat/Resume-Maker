@@ -1,8 +1,5 @@
 
-import './App.css'
-
-import ResumeForm from './Components/ResumeForm'
-
+import { Outlet } from 'react-router-dom'
 
 import Sidebar from './Components/sidebar'
 import Template from './Components/Template'
@@ -14,9 +11,9 @@ function App() {
 
   return (
     <>
-     <div className='flex h-full'>
+     <div className='flex h-full overflow-y-auto'>
       <Sidebar/>
-      <ResumeForm/>
+      <Outlet/>
       <Template/>
      
   

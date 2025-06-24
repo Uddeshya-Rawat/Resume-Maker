@@ -13,10 +13,10 @@ const initialState = {
     education: [
         {
             college: "xyz college",
-           
+
             from: "0000",
             to: "0000",
-            stream:"B.tech in computer scienece engineering"
+            stream: "B.tech in computer scienece engineering"
         }
     ],
     experience: [
@@ -30,14 +30,17 @@ const initialState = {
     projects: [
 
         {
-            title: "",
-            description: "",
-            techStack: ""
+            title: "TODO app",
+            description: "create to do app",
+            techStack: 'html css javascript '
         }
 
     ],
-    skills: [],
-    certifications: [],
+    skills: ["react.js"],
+    certifications: [{
+        title: "react.js Course",
+        link: "https//localhostAJjiasf"
+    }],
 }
 
 
@@ -74,7 +77,7 @@ export const formSlice = createSlice({
             const { index, value } = action.payload;
             state.education[index].college = value
         },
-        
+
         setFromDate: (state, action) => {
             const { index, value } = action.payload;
             state.education[index].from = value
@@ -113,13 +116,60 @@ export const formSlice = createSlice({
             const { index, value } = action.payload
             state.experience[index].workDescription = value
         },
+        setProjectTitle: (state, action) => {
+            const { index, value } = action.payload
+            state.projects[index].title = value
+        },
+        setProjectDescription: (state, action) => {
+            const { index, value } = action.payload
+            state.projects[index].description = value
+        },
+        setProjectTechStack: (state, action) => {
+            const { index, value } = action.payload
+            state.projects[index].techStack = value
+        },
+        addProject: (state) => {
+            state.projects.push({
+                title: "",
+                description: "",
+                techStack: ''
 
+            })
+        },
+        addSkill: (state, action) => {
+            state.skills.push(action.payload)
+        },
+        setSkill: (state, action) => {
+            const { index, value } = action.payload
+            state.skills[index] = value
+        },
+        addCertification: (state) => {
+            state.certifications.push({
+                title: "react.js Course",
+                link: "https//localhostAJjiasf"
+            });
+        },
+        setCertificationTitle: (state, action) => {
+            const { index, value } = action.payload;
+            state.certifications[index].title = value;
+        },
+        setCertificationLink: (state, action) => {
+            const { index, value } = action.payload;
+            state.certifications[index].link = value;
+        }
 
     }
 
 })
 
-export const { setAddress, setFirstName, setLastName, setEmail, setStream, setNumber, setCollege, setFromDate, setToDate, setEducation, setCompanyName, setExperience, setFromCompany, setToCompany, setdescriptionCompany } = formSlice.actions;
+export const { setAddress, setFirstName, setLastName, setEmail,
+    setStream, setNumber,
+    setCollege, setFromDate, setToDate, setEducation,
+    setCompanyName, setExperience, setFromCompany, setToCompany, setdescriptionCompany,
+    setProjectTitle, setProjectDescription, setProjectTechStack,
+    addProject, addSkill, setSkill,
+    setCertificationLink, setCertificationTitle ,
+    addCertification } = formSlice.actions;
 
 
 export default formSlice.reducer
