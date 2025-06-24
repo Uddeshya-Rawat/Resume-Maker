@@ -28,9 +28,20 @@ const ResumeTemplate = () => {
     });
 
 
+ const pdfWidth = pdf.internal.pageSize.getWidth();   // 210 mm
 
-    pdf.addImage(imgData, 'PNG', 0, 0, 105, 105);
-    pdf.save('My_Resume.pdf');
+
+  const imgProps = {
+    width: canvas.width,
+    height: canvas.height,
+  };
+
+  // Calculate image ratio
+  const ratio = imgProps.width / imgProps.height;
+  const imgHeight = pdfWidth / ratio; // maintain aspect ratio
+
+  pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, imgHeight);
+  pdf.save('My_Resume.pdf');
   };
 
   return (
