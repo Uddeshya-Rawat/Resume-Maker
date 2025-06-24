@@ -1,36 +1,56 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
 
-const Template = () => {
-  const { firstName, lastName, email, contactNumber,address,education} = useSelector((state) => state.form)
-  
+import React, { useRef } from "react";
 
-  
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import Temp1 from "./Templates/Temp1";
+
+const ResumeTemplate = () => {
+  const resumeRef = useRef();
+
+  const templateArray = [<Temp1 />]
+
+
+  const handlePrint = async () => {
+    const element = resumeRef.current;
+
+    const canvas = await html2canvas(element, {  // create canvas
+      scale: 2,
+
+    });
+
+    const imgData = canvas.toDataURL('image/png'); // convert to image
+
+    const pdf = new jsPDF({  // pdf settings
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4',
+    });
+
+
+
+    pdf.addImage(imgData, 'PNG', 0, 0, 105, 105);
+    pdf.save('My_Resume.pdf');
+  };
 
   return (
-    <div className='h-screen fixed right-0 top-0 p-6 overflow-y-auto w-[42%]'>
+    <div className="bg-gray-300 p-6 flex flex-col items-center gap-6 w-full">
+      <button
+        onClick={handlePrint}
+        className="bg-blue-600 p-2 rounded-2xl text-white w-1/3"
+      >
+        Download Resume
+      </button>
 
-      <div>{firstName}</div>
-      <div>{lastName}</div>
-      <div>{email}</div>
-      <div>{contactNumber}</div>
-      <div>{address}</div>
-      {
-        education.map((edu)=>{
-          return(
-            <>
-
-            <div>{edu.college}</div>
-            <div>{edu.collegeAddress}</div>
-            <div>{edu.from}</div>
-            <div>{edu.to}</div>
-            </>
-          )
-        })
-      }
-     
+      <div
+        ref={resumeRef}
+        className="outer_template"
+      >
+        {templateArray[0]}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Template
+export default ResumeTemplate;
+

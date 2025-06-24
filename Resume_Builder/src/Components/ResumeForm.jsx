@@ -1,15 +1,17 @@
-import Address from "./Address"
-import Education from "./Education"
-import PersonalDetails from "./PersonalDetails"
+import Address from "./FormComponents/Address"
+import Education from "./FormComponents/Education"
+import Experience from "./FormComponents/Experience"
+import PersonalDetails from "./FormComponents/PersonalDetails"
 
 
 const ResumeForm = () => {
     
     return (
-        <div className="p-10 bg-gray-200 w-[45%] overflow-auto ml-50">
+        <div className="p-5 bg-gray-200 w-full ml-50">
             <PersonalDetails/>
             <Address/>
             <Education/>
+            <Experience/>
         </div>
 
     )

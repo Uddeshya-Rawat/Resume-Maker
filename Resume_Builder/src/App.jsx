@@ -3,11 +3,13 @@ import './App.css'
 
 import ResumeForm from './Components/ResumeForm'
 
+
 import Sidebar from './Components/sidebar'
 import Template from './Components/Template'
 
 
 function App() {
+  
   
 
   return (
@@ -16,6 +18,11 @@ function App() {
       <Sidebar/>
       <ResumeForm/>
       <Template/>
+     
+  
+      
+   
+   
       
      
      </div>

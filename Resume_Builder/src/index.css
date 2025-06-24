@@ -8,4 +8,14 @@
   margin: 0;
 }
 
+.outer_template{
+  background-color: white;
+  color: black;
+  width: 700px; /* A4 width */
+  min-height: 1000px; /* A4 height */
+  padding: 4px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-family: 'Arial', sans-serif;
+}
 
